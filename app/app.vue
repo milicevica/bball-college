@@ -12,7 +12,7 @@ useHead({
 })
 
 const title = 'Koledzi'
-const description = 'Search and filter college basketball programs by school, mascot, city, conference and state.'
+const description = 'Search and filter college basketball teams by school, city, conference and state.'
 
 useSeoMeta({
   title,

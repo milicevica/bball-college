@@ -1,3 +1,5 @@
+import type { Major } from '#shared/utils/major'
+
 /** One row of the Google Sheet */
 export interface Team {
   id: string
@@ -7,6 +9,8 @@ export interface Team {
   /** USPS code parsed from "City, ST" locations, if present */
   state?: string
   coach: string
+  /** From the "Major" column; blank or unrecognised values are left out */
+  major?: Major
   notes: string
 }
 

@@ -1,130 +1,104 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
-/* College Hoops — tokens from the design system.
-   Scales: bg-gold-500, text-sand-600…
+/* Koledzi — tokens from the Program Finder design.
    Semantic: bg-(--surface), text-(--text-muted)…
    Dark mode: .dark on <html> (Nuxt color-mode) */
 
 @theme static {
-  --font-sans: "Public Sans", system-ui, sans-serif;
-  --font-display: "Big Shoulders", "Arial Narrow", sans-serif;
-
-  /* Brand gold — 500 is the anchor */
-  --color-gold-50: #FBF7EC;
-  --color-gold-100: #F5ECD2;
-  --color-gold-200: #EBD8A5;
-  --color-gold-300: #DFC074;
-  --color-gold-400: #D4AF5A;
-  --color-gold-500: #C9A24A;
-  --color-gold-600: #A8843A;
-  --color-gold-700: #8A6A1F;
-  --color-gold-800: #6B521C;
-  --color-gold-900: #4F3D17;
-  --color-gold-950: #2D220C;
-
-  /* Warm neutral scale */
-  --color-sand-50: #F7F5F0;
-  --color-sand-100: #EFEBE2;
-  --color-sand-200: #E0D9CA;
-  --color-sand-300: #C8C0AE;
-  --color-sand-400: #A39D90;
-  --color-sand-500: #7D776B;
-  --color-sand-600: #5E584C;
-  --color-sand-700: #45413A;
-  --color-sand-800: #2B2925;
-  --color-sand-900: #1A1917;
-  --color-sand-950: #0F0E0C;
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
 }
 
 /* ---------- Light ---------- */
 :root {
-  --bg: #F7F5F0;
+  --bg: #FAFAF9;
   --surface: #FFFFFF;
-  --surface-muted: #EFEBE2;
-  --border: #E0D9CA;
-  --border-strong: #C8C0AE;
+  --surface-muted: #F4F4F5;
+  --hover: #F7F7F8;
+  --border: #E4E4E7;
 
-  --text: #1A1917;
-  --text-muted: #5E584C;
+  --text: #18181B;
+  --text-muted: #52525B;
+  --text-subtle: #71717A;
 
-  --primary: #C9A24A;
-  --primary-hover: #A8843A;
-  --on-primary: #1A1917;
-  --primary-text: #8A6A1F;
-  --primary-soft: #F5ECD2;
+  --accent: #18181B;
+  --accent-fg: #FFFFFF;
 
-  --inverse: #1A1917;
-  --on-inverse: #F7F5F0;
-  --inverse-accent: #C9A24A;
+  --shadow: 0 12px 40px rgb(24 24 27 / 0.10), 0 2px 6px rgb(24 24 27 / 0.05);
 
-  --success: #15803D;
-  --warning: #C2410C;
-  --error: #B91C1C;
-  --info: #1D4ED8;
-
-  --focus-ring: #A8843A;
-
-  --shadow-sm: 0 1px 2px 0 rgb(26 25 23 / 0.06);
-  --shadow-md: 0 8px 24px -8px rgb(26 25 23 / 0.16);
-  --shadow-lg: 0 16px 40px -12px rgb(26 25 23 / 0.24);
+  /* Major levels: bar is the row edge and dot, bg/fg the pill */
+  --major-high: #D97706;
+  --major-high-bg: #FEF3C7;
+  --major-high-fg: #92400E;
+  --major-mid: #2563EB;
+  --major-mid-bg: #DBEAFE;
+  --major-mid-fg: #1E40AF;
+  --major-low: #0D9488;
+  --major-low-bg: #CCFBF1;
+  --major-low-fg: #115E59;
 }
 
 /* ---------- Dark ---------- */
 .dark {
-  --bg: #0F0E0C;
-  --surface: #1A1917;
-  --surface-muted: #23211E;
-  --border: #2F2C27;
-  --border-strong: #45413A;
+  --bg: #0B0B0C;
+  --surface: #141416;
+  --surface-muted: #1C1C1F;
+  --hover: #19191C;
+  --border: #27272A;
 
-  --text: #F2EEE6;
-  --text-muted: #A39D90;
+  --text: #FAFAFA;
+  --text-muted: #A1A1AA;
+  --text-subtle: #8A8A93;
 
-  --primary: #D4AF5A;
-  --primary-hover: #DFC074;
-  --on-primary: #0F0E0C;
-  --primary-text: #D4AF5A;
-  --primary-soft: #2D220C;
+  --accent: #FAFAFA;
+  --accent-fg: #0B0B0C;
 
-  --inverse: #F7F5F0;
-  --on-inverse: #1A1917;
-  --inverse-accent: #8A6A1F; /* gold-700: primary on the sand band is 1.9:1 */
+  --shadow: 0 16px 48px rgb(0 0 0 / 0.55);
 
-  --success: #4ADE80;
-  --warning: #FB923C;
-  --error: #F87171;
-  --info: #60A5FA;
-
-  --focus-ring: #DFC074;
-
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
-  --shadow-md: 0 8px 24px -8px rgb(0 0 0 / 0.7);
-  --shadow-lg: 0 16px 40px -12px rgb(0 0 0 / 0.8);
+  --major-high: #F59E0B;
+  --major-high-bg: rgb(245 158 11 / 0.14);
+  --major-high-fg: #FCD34D;
+  --major-mid: #3B82F6;
+  --major-mid-bg: rgb(59 130 246 / 0.16);
+  --major-mid-fg: #93C5FD;
+  --major-low: #14B8A6;
+  --major-low-bg: rgb(20 184 166 / 0.14);
+  --major-low-fg: #5EEAD4;
 }
 
-/* Nuxt UI reads its own variables; point them at the semantic tokens */
+/* Nuxt UI reads its own variables; point them at the semantic tokens.
+   bg-default is the surface (inputs, menus, panels); the page itself sits on --bg */
 :root,
 .dark {
-  --ui-radius: 0.25rem;
+  /* rounded-lg = 10px for controls, rounded-md = 7.5px inside them */
+  --ui-radius: 0.3125rem;
+  /* 1344px including the 32px gutters */
+  --ui-container: 84rem;
 
-  --ui-bg: var(--bg);
-  --ui-bg-muted: var(--surface-muted);
+  --ui-bg: var(--surface);
+  --ui-bg-muted: var(--hover);
   --ui-bg-elevated: var(--surface-muted);
   --ui-bg-accented: var(--border);
-  --ui-bg-inverted: var(--inverse);
+  --ui-bg-inverted: var(--accent);
 
   --ui-text: var(--text);
   --ui-text-highlighted: var(--text);
   --ui-text-toned: var(--text-muted);
-  --ui-text-muted: var(--text-muted); /* default neutral-500 fails contrast */
-  --ui-text-dimmed: var(--text-muted);
-  --ui-text-inverted: var(--on-inverse);
+  --ui-text-muted: var(--text-muted);
+  --ui-text-dimmed: var(--text-subtle);
+  --ui-text-inverted: var(--accent-fg);
 
   --ui-border: var(--border);
   --ui-border-muted: var(--border);
-  --ui-border-accented: var(--border-strong);
-  --ui-border-inverted: var(--inverse);
+  --ui-border-accented: var(--border);
+  --ui-border-inverted: var(--accent);
+}
+
+/* Near-black primary (white in dark mode). Doubled up to beat the color plugin's own :root rule */
+html:root,
+html.dark {
+  --ui-primary: var(--accent);
 }
 
 @layer base {

@@ -1,26 +1,25 @@
 <template>
-  <header class="bg-(--inverse) text-(--on-inverse)">
-    <UContainer class="flex h-14 items-center justify-between">
+  <header>
+    <UContainer class="flex h-14 items-center justify-between gap-4 sm:h-16">
       <NuxtLink
         to="/"
         class="
-          rounded-sm font-display text-2xl leading-none font-extrabold
-          tracking-[0.01em]
+          rounded-sm text-xl font-[650] tracking-[-0.015em]
           focus-visible:outline-2 focus-visible:outline-offset-2
-          focus-visible:outline-(--on-inverse)
+          focus-visible:outline-primary
+          sm:text-[22px]
         "
       >
-        <span class="text-(--inverse-accent)">Koledzi</span>
+        Koledzi
       </NuxtLink>
 
       <UColorModeButton
         color="neutral"
-        variant="ghost"
+        variant="outline"
         class="
-          text-(--on-inverse) opacity-80
-          hover:bg-transparent hover:opacity-100
-          focus-visible:outline-2 focus-visible:outline-offset-2
-          focus-visible:outline-(--on-inverse)
+          size-11 justify-center text-muted
+          hover:text-default
+          sm:size-9
         "
       />
     </UContainer>

@@ -11,6 +11,7 @@ const COLUMNS = {
   conference: 'conference',
   location: 'location',
   coach: 'coach',
+  major: 'major',
   notes: 'notes'
 } as const
 
@@ -64,6 +65,7 @@ async function fetchTeams(): Promise<Team[]> {
         location,
         state: /,\s*([A-Z]{2})$/.exec(location)?.[1],
         coach: cell(row, 'coach'),
+        major: parseMajor(cell(row, 'major')),
         notes: cell(row, 'notes')
       }
     })
